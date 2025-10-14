@@ -39,6 +39,11 @@ ENHANCEMENTS:
 * feat: support for issues using github_issue resource by @ewilde in https://github.com/integrations/terraform-provider-github/pull/1047
 * feat: add configurable read_delay_ms by @morremeyer in https://github.com/integrations/terraform-provider-github/pull/1054
 
+## [v0.0.2](https://github.com/knowledge-work/terraform-provider-github/compare/v0.0.1...v0.0.2) - 2025-10-14
+### 🏷 Other Changes
+- chore/goleaser-version: update:goreleaser by @yumafuu in https://github.com/knowledge-work/terraform-provider-github/pull/5
+- chore/fix-secret-name: fix:secret by @yumafuu in https://github.com/knowledge-work/terraform-provider-github/pull/7
+
 ## [v0.0.1](https://github.com/knowledge-work/terraform-provider-github/compare/v0.0.0...v0.0.1) - 2025-10-14
 
 ## 4.21.0 (Mar 11, 2022)
