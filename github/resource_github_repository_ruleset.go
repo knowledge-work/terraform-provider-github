@@ -72,7 +72,8 @@ func resourceGithubRepositoryRuleset() *schema.Resource {
 							ValidateFunc: validation.StringInSlice([]string{"always", "pull_request"}, false),
 							Description:  "When the specified actor can bypass the ruleset. pull_request means that an actor can only bypass rules on pull requests. Can be one of: `always`, `pull_request`.",
 						},
-					}},
+					},
+				},
 			},
 			"node_id": {
 				Type:        schema.TypeString,
@@ -576,6 +577,12 @@ func resourceGithubRepositoryRulesetRead(d *schema.ResourceData, meta interface{
 		}
 	}
 
+	if ruleset == nil {
+		log.Printf("[INFO] Removing ruleset %s/%s: %d from state because it no longer exists in GitHub (empty response)",
+			owner, repoName, rulesetID)
+		d.SetId("")
+		return nil
+	}
 	d.Set("etag", resp.Header.Get("ETag"))
 	d.Set("name", ruleset.Name)
 	d.Set("target", ruleset.GetTarget())
