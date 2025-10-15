@@ -10,6 +10,11 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
+type pullRequestRuleParametersWithCopilot struct {
+	github.PullRequestRuleParameters
+	AutomaticCopilotCodeReviewEnabled *bool `json:"automatic_copilot_code_review_enabled,omitempty"`
+}
+
 func resourceGithubRulesetObject(d *schema.ResourceData, org string) *github.Ruleset {
 	isOrgLevel := len(org) > 0
 
@@ -481,7 +486,7 @@ func flattenRules(rules []*github.RepositoryRule, org bool) []interface{} {
 			}
 
 		case "pull_request":
-			var params github.PullRequestRuleParameters
+			var params pullRequestRuleParametersWithCopilot
 
 			err := json.Unmarshal(*v.Parameters, &params)
 			if err != nil {
@@ -495,6 +500,11 @@ func flattenRules(rules []*github.RepositoryRule, org bool) []interface{} {
 			rule["require_last_push_approval"] = params.RequireLastPushApproval
 			rule["required_approving_review_count"] = params.RequiredApprovingReviewCount
 			rule["required_review_thread_resolution"] = params.RequiredReviewThreadResolution
+			if params.AutomaticCopilotCodeReviewEnabled != nil {
+				rule["automatic_copilot_code_review_enabled"] = *params.AutomaticCopilotCodeReviewEnabled
+			} else {
+				rule["automatic_copilot_code_review_enabled"] = false
+			}
 			rulesMap[v.Type] = []map[string]interface{}{rule}
 
 		case "required_status_checks":

@@ -225,6 +225,11 @@ func resourceGithubOrganizationRuleset() *schema.Resource {
 										Default:     false,
 										Description: "All conversations on code must be resolved before a pull request can be merged. Defaults to `false`.",
 									},
+									"automatic_copilot_code_review_enabled": {
+										Type:        schema.TypeBool,
+										Computed:    true,
+										Description: "Whether GitHub Copilot code review is automatically requested for pull requests. This field is read-only through this provider.",
+									},
 								},
 							},
 						},
