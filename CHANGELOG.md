@@ -39,6 +39,10 @@ ENHANCEMENTS:
 * feat: support for issues using github_issue resource by @ewilde in https://github.com/integrations/terraform-provider-github/pull/1047
 * feat: add configurable read_delay_ms by @morremeyer in https://github.com/integrations/terraform-provider-github/pull/1054
 
+## [v0.0.4](https://github.com/knowledge-work/terraform-provider-github/compare/v0.0.3...v0.0.4) - 2025-10-17
+### 🏷 Other Changes
+- chore: Configure Renovate by @renovate[bot] in https://github.com/knowledge-work/terraform-provider-github/pull/10
+
 ## [v0.0.3](https://github.com/knowledge-work/terraform-provider-github/compare/v0.0.2...v0.0.3) - 2025-10-15
 ### 🏷 Other Changes
 - feat: readonly AutomaticCopilotCodeReviewEnabled by @yumafuu in https://github.com/knowledge-work/terraform-provider-github/pull/8
