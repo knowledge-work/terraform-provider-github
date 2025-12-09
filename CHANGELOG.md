@@ -39,6 +39,17 @@ ENHANCEMENTS:
 * feat: support for issues using github_issue resource by @ewilde in https://github.com/integrations/terraform-provider-github/pull/1047
 * feat: add configurable read_delay_ms by @morremeyer in https://github.com/integrations/terraform-provider-github/pull/1054
 
+## [v0.0.4](https://github.com/knowledge-work/terraform-provider-github/compare/v0.0.3...v0.0.4) - 2025-12-09
+### 🏷 Other Changes
+- chore: Configure Renovate by @renovate[bot] in https://github.com/knowledge-work/terraform-provider-github/pull/10
+- fix(deps): update module github.com/go-jose/go-jose/v3 to v3.0.4 by @renovate[bot] in https://github.com/knowledge-work/terraform-provider-github/pull/13
+- chore(deps): update actions/stale action to v9.1.0 by @renovate[bot] in https://github.com/knowledge-work/terraform-provider-github/pull/17
+- chore(deps): update actions/setup-go action to v5.5.0 by @renovate[bot] in https://github.com/knowledge-work/terraform-provider-github/pull/16
+- chore(deps): update crazy-max/ghaction-import-gpg action to v6.3.0 by @renovate[bot] in https://github.com/knowledge-work/terraform-provider-github/pull/18
+- chore(deps): update actions/checkout action to v4.3.0 by @renovate[bot] in https://github.com/knowledge-work/terraform-provider-github/pull/14
+- chore(deps): update actions/create-github-app-token action to v2.1.4 by @renovate[bot] in https://github.com/knowledge-work/terraform-provider-github/pull/15
+- :arrow_up: [CI] Renovate 設定を共通設定に移行 by @hori-ryota in https://github.com/knowledge-work/terraform-provider-github/pull/29
+
 ## [v0.0.3](https://github.com/knowledge-work/terraform-provider-github/compare/v0.0.2...v0.0.3) - 2025-10-15
 ### 🏷 Other Changes
 - feat: readonly AutomaticCopilotCodeReviewEnabled by @yumafuu in https://github.com/knowledge-work/terraform-provider-github/pull/8
