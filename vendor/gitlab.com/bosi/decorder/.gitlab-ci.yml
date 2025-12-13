@@ -27,7 +27,7 @@ test:
 
 lint:source-code:
     stage: test
-    image: golangci/golangci-lint:v1.55.2-alpine@sha256:22e4dd2bba6ad3c6ef918432b92329b51e82d55e470d268d315bfff6a160bceb
+    image: golangci/golangci-lint:v1.64.8-alpine@sha256:ae6460f78db54f22838d2a8aee0f2eaa4f785d5a01f638600072b60848f8deb4
     script:
         - apk add make bash
         - make settings
