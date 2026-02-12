@@ -107,9 +107,9 @@ func (s *UsersService) Get(ctx context.Context, user string) (*User, *Response, 
 
 // GetByID fetches a user.
 //
-// GitHub API docs: https://docs.github.com/rest/users/users#get-a-user-using-their-id
+// Note: GetByID uses the undocumented GitHub API endpoint "GET /user/{user_id}".
 //
-//meta:operation GET /user/{account_id}
+//meta:operation GET /user/{user_id}
 func (s *UsersService) GetByID(ctx context.Context, id int64) (*User, *Response, error) {
 	u := fmt.Sprintf("user/%d", id)
 	req, err := s.client.NewRequest("GET", u, nil)
