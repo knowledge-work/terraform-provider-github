@@ -8,7 +8,6 @@ package github
 import (
 	"bytes"
 	"context"
-	"errors"
 	"fmt"
 )
 
@@ -353,7 +352,7 @@ type pullRequestUpdate struct {
 //meta:operation PATCH /repos/{owner}/{repo}/pulls/{pull_number}
 func (s *PullRequestsService) Edit(ctx context.Context, owner string, repo string, number int, pull *PullRequest) (*PullRequest, *Response, error) {
 	if pull == nil {
-		return nil, nil, errors.New("pull must be provided")
+		return nil, nil, fmt.Errorf("pull must be provided")
 	}
 
 	u := fmt.Sprintf("repos/%v/%v/pulls/%d", owner, repo, number)

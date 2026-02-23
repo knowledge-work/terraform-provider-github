@@ -8,7 +8,6 @@ package github
 import (
 	"context"
 	"encoding/json"
-	"errors"
 	"fmt"
 )
 
@@ -70,7 +69,7 @@ func (cpv *CustomPropertyValue) UnmarshalJSON(data []byte) error {
 			if str, ok := item.(string); ok {
 				strSlice[i] = str
 			} else {
-				return errors.New("non-string value in string array")
+				return fmt.Errorf("non-string value in string array")
 			}
 		}
 		cpv.Value = strSlice
