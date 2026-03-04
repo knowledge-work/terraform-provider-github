@@ -33,7 +33,7 @@ jobs:
           cache: true
 
       - name: Run tagpr
-        uses: Songmu/tagpr@9c294c8b7b1815a5f3b7c61d6ee6aa50ac25b030 # v1.8.4
+        uses: Songmu/tagpr@b3fb89424646b06c8aa460f50307c60b6a541425 # v1.17.1
         env:
           GITHUB_TOKEN: ${{ steps.token.outputs.token }}
 
