@@ -1,4 +1,4 @@
-FROM golang:1.10.0-alpine
+FROM golang:1.10.0-alpine@sha256:3fb74d9a61403acd5f2ce02cdd6570467350b23fcdd191628d4fddaa6523be02
 
 # cache buster
 RUN echo 4 
