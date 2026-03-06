@@ -29,19 +29,6 @@ type BranchProtectionRuleEvent struct {
 	Installation *Installation         `json:"installation,omitempty"`
 }
 
-// BranchProtectionConfigurationEvent is triggered when there is a change to branch protection configurations for a repository.
-// The Webhook event name is "branch_protection_configuration".
-//
-// GitHub API docs: https://docs.github.com/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#branch_protection_configuration
-type BranchProtectionConfigurationEvent struct {
-	Action       *string       `json:"action,omitempty"`
-	Repo         *Repository   `json:"repository,omitempty"`
-	Org          *Organization `json:"organization,omitempty"`
-	Enterprise   *Enterprise   `json:"enterprise,omitempty"`
-	Sender       *User         `json:"sender,omitempty"`
-	Installation *Installation `json:"installation,omitempty"`
-}
-
 // CheckRunEvent is triggered when a check run is "created", "completed", or "rerequested".
 // The Webhook event name is "check_run".
 //
@@ -766,7 +753,8 @@ type MemberChanges struct {
 //
 // GitHub API docs: https://docs.github.com/developers/webhooks-and-events/webhook-events-and-payloads#member
 type MemberEvent struct {
-	// Action is the action that was performed. Possible values are: "added", "edited", "removed".
+	// Action is the action that was performed. Possible values are:
+	//"added", "edited", "removed".
 	Action  *string        `json:"action,omitempty"`
 	Member  *User          `json:"member,omitempty"`
 	Changes *MemberChanges `json:"changes,omitempty"`
@@ -1517,22 +1505,6 @@ type RepositoryImportEvent struct {
 	Sender *User         `json:"sender,omitempty"`
 }
 
-// RepositoryRulesetEvent triggers whenever there is a change to the repository's ruleset configuration.
-//
-// This can include updates to protection rules, required status checks, code owners, or other related configurations.
-//
-// GitHub API docs: https://docs.github.com/en/webhooks/webhook-events-and-payloads#repository_ruleset
-type RepositoryRulesetEvent struct {
-	Action            *string                         `json:"action,omitempty"`
-	Enterprise        *Enterprise                     `json:"enterprise,omitempty"`
-	Installation      *Installation                   `json:"installation,omitempty"`
-	Organization      *Organization                   `json:"organization,omitempty"`
-	Repository        *Repository                     `json:"repository,omitempty"`
-	RepositoryRuleset *RepositoryRuleset              `json:"repository_ruleset"`
-	Changes           *RepositoryRulesetEditedChanges `json:"changes,omitempty"`
-	Sender            *User                           `json:"sender"`
-}
-
 // RepositoryVulnerabilityAlertEvent is triggered when a security alert is created, dismissed, or resolved.
 //
 // GitHub API docs: https://docs.github.com/developers/webhooks-and-events/webhook-events-and-payloads#repository_vulnerability_alert
@@ -1591,20 +1563,6 @@ type SecretScanningAlertEvent struct {
 	Organization *Organization `json:"organization,omitempty"`
 	Enterprise   *Enterprise   `json:"enterprise,omitempty"`
 	Installation *Installation `json:"installation,omitempty"`
-}
-
-// SecretScanningAlertLocationEvent is triggered when there is activity relating to the locations of a secret in a secret scanning alert.
-// The Webhook event name is "secret_scanning_alert_location".
-//
-// GitHub API docs: https://docs.github.com/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#secret_scanning_alert_location
-type SecretScanningAlertLocationEvent struct {
-	Action       *string                      `json:"action,omitempty"`
-	Alert        *SecretScanningAlert         `json:"alert,omitempty"`
-	Installation *Installation                `json:"installation,omitempty"`
-	Location     *SecretScanningAlertLocation `json:"location,omitempty"`
-	Organization *Organization                `json:"organization,omitempty"`
-	Repo         *Repository                  `json:"repository,omitempty"`
-	Sender       *User                        `json:"sender,omitempty"`
 }
 
 // SecurityAndAnalysisEvent is triggered when code security and analysis features
